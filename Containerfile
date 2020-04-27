@@ -12,7 +12,8 @@ RUN apt-get -y update && \
       gcc \
       python3 \
       python3-pip \
-      pylint3
+      pylint3 && \
+    rm -rf /var/lib/apt/lists/*
 
 ###
 # PIP
