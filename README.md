@@ -3,7 +3,7 @@ Run Visual Studio Code in a browser as regular user with Podman
 
 The people from coder.com created [code-server](https://github.com/cdr/code-server) which is VS Code running on a remote server, accessible through the browser. This
 project uses the container they created and extends that with serveral extensions. The main purpose is to have a fully working development container that can be
-used in an environment where internet connectivity is not available.
+used in an environment where internet connectivity is not available, also known as an **airgapped** environment.
 
 ## Build the container
 ```lang=shell
