@@ -7,15 +7,15 @@ used in an environment where internet connectivity is not available, also known 
 
 ## Build the container
 ```lang=shell
-$ podman build -t code-server:3.1.1-$(id -un) .
+$ podman build -t code-server:3.9.0-$(id -un) .
 ```
 
 ## Run the container
 ```lang=shell
-$ podman run -it -p 127.0.0.1:8080:8080 --rm -v "${HOME}/mycode:/home/coder/project:z"  --name vscode localhost/code-server:3.1.1-$(id -un)
+$ podman run -it -p 127.0.0.1:8080:8080 --rm -v "${HOME}/meuk:/home/coder/project:z"  -v "${HOME}/.config:/home/coder/.config:z" --name vscode localhost/code-server:3.9.0-$(id -un)
 ```
 
-After starting the container, open the url http://localhost:8080 in your browser
+After starting the container, open the url http://localhost:8080 in your browser, the password is in ~/.config/code-server/config.yaml
 
 ## Why 'USER root' in the Containerfile?
 Running the container as a regular user with a non-root user in the container, results in a permission denied on every action in your home directory. Please do not start the container as root user....
